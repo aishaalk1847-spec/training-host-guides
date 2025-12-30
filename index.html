@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Session Host Script</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f9; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .section { margin-bottom: 25px; }
+        .time-header { font-weight: bold; color: #007bff; font-size: 1.1em; margin-top: 15px; display: block; }
+        .command-row { display: flex; align-items: center; justify-content: space-between; background: #fafafa; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; }
+        .command-text { font-family: monospace; color: #444; flex-grow: 1; margin-right: 10px; word-break: break-all; }
+        button { background: #28a745; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 0.9em; white-space: nowrap; }
+        button:hover { background: #218838; }
+        button:active { background: #1e7e34; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Training Session Script</h1>
+
+    <div class="section">
+        <span class="time-header">⏰ XX:30 - Setup</span>
+        <div class="command-row">
+            <span class="command-text">:lobbydoors</span>
+            <button onclick="copyToClipboard(':lobbydoors')">Copy</button>
+        </div>
+        <div class="command-row">
+            <span class="command-text">:host me</span>
+            <button onclick="copyToClipboard(':host me')">Copy</button>
+        </div>
+        <div class="command-row">
+            <span class="command-text">:sessionstatus waiting</span>
+            <button onclick="copyToClipboard(':sessionstatus waiting')">Copy</button>
+        </div>
+        <div class="command-row">
+            <span class="command-text">:stickymessage [👋] Salutations Staff! Welcome to the 8 am EST training, PTS will be enabled soon. | Host: 14a0l</span>
+            <button onclick="copyToClipboard(':stickymessage [👋] Salutations Staff! Welcome to the 8 am EST training, PTS will be enabled soon. | Host: 14a0l')">Copy</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <span class="time-header">⏰ XX:59 - Opening</span>
+        <div class="command-row">
+            <span class="command-text">:unslock</span>
+            <button onclick="copyToClipboard(':unslock')">Copy</button>
+        </div>
+        <div class="command-row">
+            <span class="command-text">:sessionstatus open</span>
+            <button onclick="copyToClipboard(':sessionstatus open')">Copy</button>
+        </div>
+        <div class="command-row">
+            <span class="command-text">:announcetraining</span>
+            <button onclick="copyToClipboard(':announcetraining')">Copy</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <span class="time-header">📝 Rules & Intro</span>
+        <div class="command-row">
+            <span class="command-text">:sm [👋]Greetings, everyone! Welcome to the training session. Before we start, we would like to go over some vital information...</span>
+            <button onclick="copyToClipboard(':sm [👋]Greetings, everyone! Welcome to the training session. Before we start, we would like to go over some vital information that will help you during this session.')">Copy</button>
+        </div>
+        <div class="command-row">
+            <span class="command-text">:sm l. Be respectful and courteous...</span>
+            <button onclick="copyToClipboard(':sm l. Be respectful and courteous towards your trainers and assistants, as they are taking valuable time out of their day to train you.')">Copy</button>
+        </div>
+        </div>
+
+    <div class="section">
+        <span class="time-header">✅ Progress Checks (Admins Only)</span>
+        <div class="command-row">
+            <span class="command-text">[🔃] First Check-Up</span>
+            <button onclick="copyToClipboard(':pm admins [🔃] First Check-Up! You should be nearing the end of your trivia stage by now. Keep up the great energy you’re all doing amazing so far!')">Copy</button>
+        </div>
+        <div class="command-row">
+            <span class="command-text">[🏁] Final Check-Up</span>
+            <button onclick="copyToClipboard(':pm admins [🏁] Final Check-Up! Demo session should be close to finishing! You’ve all done an incredible job today. Where should we take our group photo? Stage, trivia room, demo room.')">Copy</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Copied to clipboard!");
+        });
+    }
+</script>
+
+</body>
+</html>
