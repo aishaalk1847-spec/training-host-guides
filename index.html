@@ -5,88 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Session Host Script</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f9; padding: 20px; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #333; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .section { margin-bottom: 25px; }
-        .time-header { font-weight: bold; color: #007bff; font-size: 1.1em; margin-top: 15px; display: block; }
-        .command-row { display: flex; align-items: center; justify-content: space-between; background: #fafafa; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; }
-        .command-text { font-family: monospace; color: #444; flex-grow: 1; margin-right: 10px; word-break: break-all; }
-        button { background: #28a745; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 0.9em; white-space: nowrap; }
-        button:hover { background: #218838; }
-        button:active { background: #1e7e34; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; padding: 20px; line-height: 1.6; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; text-align: center; border-bottom: 3px solid #1a73e8; padding-bottom: 15px; margin-top: 0; }
+        .section-title { background: #e8f0fe; color: #1967d2; padding: 10px 15px; border-radius: 6px; font-weight: bold; margin-top: 25px; display: block; border-left: 5px solid #1a73e8; }
+        .command-row { display: flex; align-items: center; justify-content: space-between; background: #ffffff; padding: 12px; margin: 8px 0; border: 1px solid #dee2e6; border-radius: 8px; transition: 0.2s; }
+        .command-row:hover { border-color: #1a73e8; background: #f8fbff; }
+        .command-text { font-family: 'Consolas', monospace; color: #3c4043; flex-grow: 1; margin-right: 15px; font-size: 0.95em; }
+        .time-label { font-size: 0.85em; color: #70757a; font-weight: bold; margin-right: 10px; min-width: 50px; }
+        button { background: #34a853; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; min-width: 80px;}
+        button:hover { background: #2d8e47; transform: translateY(-1px); }
+        button:active { transform: translateY(0); }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Training Session Script</h1>
+    <h1>Host Command Panel</h1>
 
-    <div class="section">
-        <span class="time-header">⏰ XX:30 - Setup</span>
-        <div class="command-row">
-            <span class="command-text">:lobbydoors</span>
-            <button onclick="copyToClipboard(':lobbydoors')">Copy</button>
-        </div>
-        <div class="command-row">
-            <span class="command-text">:host me</span>
-            <button onclick="copyToClipboard(':host me')">Copy</button>
-        </div>
-        <div class="command-row">
-            <span class="command-text">:sessionstatus waiting</span>
-            <button onclick="copyToClipboard(':sessionstatus waiting')">Copy</button>
-        </div>
-        <div class="command-row">
-            <span class="command-text">:stickymessage [👋] Salutations Staff! Welcome to the 8 am EST training, PTS will be enabled soon. | Host: 14a0l</span>
-            <button onclick="copyToClipboard(':stickymessage [👋] Salutations Staff! Welcome to the 8 am EST training, PTS will be enabled soon. | Host: 14a0l')">Copy</button>
-        </div>
-    </div>
+    <span class="section-title">🕒 PRE-SESSION (xx:30)</span>
+    <div class="command-row"><span class="time-label">xx:30</span><span class="command-text">:lobbydoors</span><button onclick="copyText(':lobbydoors')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:30</span><span class="command-text">:host me</span><button onclick="copyText(':host me')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:30</span><span class="command-text">:sessionstatus waiting</span><button onclick="copyText(':sessionstatus waiting')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:30</span><span class="command-text">:stickymessage [👋] Salutations Staff! Welcome to the 8 am EST training, PTS will be enabled soon. | Host: 14a0l</span><button onclick="copyText(':stickymessage [👋] Salutations Staff! Welcome to the 8 am EST training, PTS will be enabled soon. | Host: 14a0l')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:30</span><span class="command-text">:pm admins 👋| Hello, everyone! I'm Aisha...</span><button onclick="copyText(':pm admins 👋| Hello, everyone! I\'m Aisha I will be your host for todays session 12 am EST, please head to staff room and wait to get logged!')">Copy</button></div>
 
-    <div class="section">
-        <span class="time-header">⏰ XX:59 - Opening</span>
-        <div class="command-row">
-            <span class="command-text">:unslock</span>
-            <button onclick="copyToClipboard(':unslock')">Copy</button>
-        </div>
-        <div class="command-row">
-            <span class="command-text">:sessionstatus open</span>
-            <button onclick="copyToClipboard(':sessionstatus open')">Copy</button>
-        </div>
-        <div class="command-row">
-            <span class="command-text">:announcetraining</span>
-            <button onclick="copyToClipboard(':announcetraining')">Copy</button>
-        </div>
-    </div>
+    <span class="section-title">📢 OPENING (xx:59 - xx:00)</span>
+    <div class="command-row"><span class="time-label">xx:59</span><span class="command-text">:unslock</span><button onclick="copyText(':unslock')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:59</span><span class="command-text">:sessionstatus open</span><button onclick="copyText(':sessionstatus open')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:59</span><span class="command-text">:announcetraining</span><button onclick="copyText(':announcetraining')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:00</span><span class="command-text">:sm Q&A (4 Minutes)</span><button onclick="copyText(':sm Welcome to the 8am EST training session! You will be given 4 minutes to ask any questions you might have. State \"!pts\" in the chat and a member of our staff will approach you to assist you.')">Copy</button></div>
 
-    <div class="section">
-        <span class="time-header">📝 Rules & Intro</span>
-        <div class="command-row">
-            <span class="command-text">:sm [👋]Greetings, everyone! Welcome to the training session. Before we start, we would like to go over some vital information...</span>
-            <button onclick="copyToClipboard(':sm [👋]Greetings, everyone! Welcome to the training session. Before we start, we would like to go over some vital information that will help you during this session.')">Copy</button>
-        </div>
-        <div class="command-row">
-            <span class="command-text">:sm l. Be respectful and courteous...</span>
-            <button onclick="copyToClipboard(':sm l. Be respectful and courteous towards your trainers and assistants, as they are taking valuable time out of their day to train you.')">Copy</button>
-        </div>
-        </div>
+    <span class="section-title">🚦 STARTING (xx:50)</span>
+    <div class="command-row"><span class="time-label">xx:50</span><span class="command-text">:sm Countdown Ended</span><button onclick="copyText(':sm The countdown has now ended. Trainees, please remain on the white lines. Trainers, please make your way back to the stage to commence the session.')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:50</span><span class="command-text">:slock</span><button onclick="copyText(':slock')">Copy</button></div>
+    <div class="command-row"><span class="time-label">xx:50</span><span class="command-text">:sessionstatus started</span><button onclick="copyText(':sessionstatus started')">Copy</button></div>
 
-    <div class="section">
-        <span class="time-header">✅ Progress Checks (Admins Only)</span>
-        <div class="command-row">
-            <span class="command-text">[🔃] First Check-Up</span>
-            <button onclick="copyToClipboard(':pm admins [🔃] First Check-Up! You should be nearing the end of your trivia stage by now. Keep up the great energy you’re all doing amazing so far!')">Copy</button>
-        </div>
-        <div class="command-row">
-            <span class="command-text">[🏁] Final Check-Up</span>
-            <button onclick="copyToClipboard(':pm admins [🏁] Final Check-Up! Demo session should be close to finishing! You’ve all done an incredible job today. Where should we take our group photo? Stage, trivia room, demo room.')">Copy</button>
-        </div>
-    </div>
+    <span class="section-title">📜 RULES</span>
+    <div class="command-row"><span class="command-text">:sm Introduction</span><button onclick="copyText(':sm [👋]Greetings, everyone! Welcome to the training session. Before we start, we would like to go over some vital information that will help you during this session.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:sm Rule I</span><button onclick="copyText(':sm l. Be respectful and courteous towards your trainers and assistants, as they are taking valuable time out of their day to train you.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:sm Rule II</span><button onclick="copyText(':sm ll. Please alert your trainer before going AFK. Failure to do so will result in a dismissal from this session.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:sm Rule III</span><button onclick="copyText(':sm lll. Trolling within our training sessions is not allowed, doing so will have you dismissed.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:sm Rule IV</span><button onclick="copyText(':sm lV. Please avoid discussing the answers with others during the trivia. If caught, it could result in dismissal.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:sm Procedures</span><button onclick="copyText(':sm [📝]Our procedures guide can be found in our communications server, it can be opened at any time during this training. It is advised for you to review them before performing them on clients.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:sm Grammar</span><button onclick="copyText(':sm [📋]Grammar is not required at the dentist. However, it is recommended that you use it if you\'d like to become an MR+.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:sm Transition</span><button onclick="copyText(':sm [🏁]We have now finished going over the rules. Please ensure you are following them. Trainers, you may head to your groups. Trainees, please be patient while you are teleported to your groups.')">Copy</button></div>
+
+    <span class="section-title">🛡️ ADMIN MANAGEMENT</span>
+    <div class="command-row"><span class="command-text">:pm admins Stations</span><button onclick="copyText(':pm admins Please proceed to your stations.')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:pm admins Host Intro</span><button onclick="copyText(':pm admins 💬| Hello everyone! I’m your host, Steve! I’ll be sending a total of three check-ups throughout today’s training session. Stay focused, do your best, and good luck to all and have a good session!')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:pm admins Check-Up 1</span><button onclick="copyText(':pm admins [🔃] First Check-Up! You should be nearing the end of your trivia stage by now. Keep up the great energy you’re all doing amazing so far!')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:pm admins Check-Up 2</span><button onclick="copyText(':pm admins [🧩] Second Check-Up! You should now be at the demonstration/roleplay stage by now. Everything’s coming together wonderfully keep showing that teamwork and professionalism!')">Copy</button></div>
+    <div class="command-row"><span class="command-text">:pm admins Check-Up 3</span><button onclick="copyText(':pm admins [🏁] Final Check-Up! Demo session should be close to finishing! You’ve all done an incredible job today. Where should we take our group photo? Stage, trivia room, demo room.')">Copy</button></div>
+
+    <span class="section-title">🏁 FINISH</span>
+    <div class="command-row"><span class="command-text">:sessionstatus remove</span><button onclick="copyText(':sessionstatus remove')">Copy</button></div>
 </div>
 
 <script>
-    function copyToClipboard(text) {
+    function copyText(text) {
         navigator.clipboard.writeText(text).then(() => {
-            alert("Copied to clipboard!");
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "COPIED!";
+            btn.style.background = "#1a73e8";
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "#34a853";
+            }, 1500);
+        }).catch(err => {
+            alert('Failed to copy: ', err);
         });
     }
 </script>
